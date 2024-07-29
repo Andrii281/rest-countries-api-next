@@ -46,13 +46,12 @@ export default function RootLayout({ children }: ChildrenProps) {
 				<Footer />
 				<link rel="stylesheet" type="text/css" href="https://reflectoadmin.s3.amazonaws.com/client-widget/develop/index.css" />
 				<script type="module" src="https://reflectoadmin.s3.amazonaws.com/client-widget/develop/index.js"></script>
-				<script type="text/javascript">
-					window.addEventListener('DOMContentLoaded', function() {
-						window.ChatAi.init({
-							projectId: "125467ec-7b71-4974-a17a-270e802b6bfe"
-						});
-					});
-				</script>
+				<script
+					dangerouslySetInnerHTML={{
+					__html: `window.addEventListener('DOMContentLoaded', function() {window.ChatAi.init({projectId: "125467ec-7b71-4974-a17a-270e802b6bfe"});});`
+					,
+					}}
+				></script>
 			</body>
 		</html>
 	);
